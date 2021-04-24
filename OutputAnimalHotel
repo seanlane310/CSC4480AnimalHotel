@@ -1,0 +1,77 @@
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+ SECTOR_NO
+----------
+         1
+
+
+1 row inserted.
+
+
+        ID NAME                 ANIMAL_TYPE           SECTOR_NO
+---------- -------------------- -------------------- ----------
+         1 Banx                 Dog                           1
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+FIRST_NAME           LAST_NAME            NAME                         ID ANIMAL_TYPE         
+-------------------- -------------------- -------------------- ---------- --------------------
+Jay                  Wright               Bailey                        5 Dog                 
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+        ID NAME                 BREED                    
+---------- -------------------- -------------------------
+         8 Zeus                 Pitbull                  
+        10 Daisy                Poodle                   
+
+
+        ID NAME                 BREED                    
+---------- -------------------- -------------------------
+         8 Zeus                 Pitbull                  
+        10 Daisy                Poodle                   
+
+
+F_NAME          L_NAME          SSN      
+--------------- --------------- ---------
+Marty           James           567910436
+Samuel          Smith           123456789
+
+
+SUM(HOURS)
+----------
+        86
+
