@@ -27,7 +27,7 @@ DROP SEQUENCE seqSID;
 CREATE TABLE SECTORS (
   Sector_no     Int             NOT NULL,
   Name          VarChar2(20)    NOT NULL,
-  Max_Cap Int             NOT NULL,
+  Max_Cap       Int             NOT NULL,
   Ext_Num       Int             NOT NULL,
   Animal_Type   VarChar2(20)    NOT NULL,
   CONSTRAINT	SECTOR_PK       PRIMARY KEY(Sector_no)
