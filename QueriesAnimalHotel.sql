@@ -80,10 +80,7 @@ WHERE '26-apr-21' < booked.expected_departure_date
     AND booked.expected_arrival_date < '26-apr-21'
     AND PET.ANIMAL_TYPE = 'Dog';
 
---Checking Dog Daycare Capacity
-SELECT SECTORS.MAX_CAP
-FROM SECTORS
-WHERE Sector_no = 1;
+
 /********************************************************************************/
 --What are the names of the employees who have worked here more than 7 years?
 
