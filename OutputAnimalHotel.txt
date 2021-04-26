@@ -1,0 +1,89 @@
+
+        ID NAME                 BREED                    
+---------- -------------------- -------------------------
+         5 Bailey               Pitbull                  
+         8 Zeus                 Pitbull                  
+        10 Daisy                Poodle                   
+
+
+        ID NAME                 BREED                    
+---------- -------------------- -------------------------
+         5 Bailey               Pitbull                  
+         8 Zeus                 Pitbull                  
+        10 Daisy                Poodle                   
+
+
+COUNT(PET.ID)
+-------------
+            3
+
+
+   MAX_CAP
+----------
+        40
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+ SECTOR_NO
+----------
+         1
+
+
+1 row inserted.
+
+
+        ID NAME                 ANIMAL_TYPE           SECTOR_NO
+---------- -------------------- -------------------- ----------
+         1 Banx                 Dog                           1
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+FIRST_NAME           LAST_NAME            NAME                         ID ANIMAL_TYPE         
+-------------------- -------------------- -------------------- ---------- --------------------
+Jay                  Wright               Bailey                        5 Dog                 
+
+
+1 row updated.
+
+
+1 row updated.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+F_NAME          L_NAME          SSN      
+--------------- --------------- ---------
+Marty           James           567910436
+Samuel          Smith           123456789
+
+
+SUM(HOURS)
+----------
+        86
+
