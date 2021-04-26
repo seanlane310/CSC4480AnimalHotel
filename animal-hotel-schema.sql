@@ -27,7 +27,7 @@ DROP SEQUENCE seqSID;
 CREATE TABLE SECTORS (
   Sector_no     Int             NOT NULL,
   Name          VarChar2(20)    NOT NULL,
-  Available_Cap Int             NOT NULL,
+  Max_Cap Int             NOT NULL,
   Ext_Num       Int             NOT NULL,
   Animal_Type   VarChar2(20)    NOT NULL,
   CONSTRAINT	SECTOR_PK       PRIMARY KEY(Sector_no)
@@ -97,8 +97,6 @@ CREATE TABLE BOOKED (
   Expected_Arrival_Date     Date            NOT NULL,
   Sector_Num                Int             NOT NULL,
   Expected_Departure_Date   Date            NOT NULL,
-  Checked_in                Int             NOT NULL,
-  Checked_out               Int             NOT NULL,
   CONSTRAINT	            BOOKED_PKS      PRIMARY KEY(Pet_ID,Expected_Arrival_Date,Sector_Num),
   CONSTRAINT	            BOOKED_PET_FK	FOREIGN KEY (Pet_ID) REFERENCES PET(ID),
   CONSTRAINT	            BOOKED_SEC_FK	FOREIGN KEY (Sector_Num) REFERENCES SECTORS(Sector_no)

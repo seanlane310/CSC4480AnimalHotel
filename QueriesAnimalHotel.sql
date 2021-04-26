@@ -11,8 +11,6 @@
 
 --Booking a service for new client
 
-SELECT SECTORS.AVAILABLE_CAP FROM SECTORS WHERE SECTORS.ANIMAL_TYPE = 'Dog';
-
 INSERT INTO OWNER VALUES(10, 'Peter', 'Donohue', 'NOVAPREZ@villanova.edu', '609-402-1000');
 INSERT INTO PET VALUES(13, 'Nova', 'Dog', 'Golden Retriever', 5, 'Calm', 10);
 INSERT INTO PET_CONDITIONS VALUES(13, 'None');
@@ -20,14 +18,12 @@ INSERT INTO SERVICES VALUES(15, 'Walk', '27-APR-21', 0);
 INSERT INTO PES VALUES(13, '123456789', 15); 
 
 SELECT SECTOR_NO FROM SECTORS WHERE SECTORS.NAME = 'Dog Daycare';
-INSERT INTO BOOKED VALUES(13, '26-APR-21', 1, '28-APR-21',0,0);
+INSERT INTO BOOKED VALUES(13, '26-APR-21', 1, '28-APR-21');
 
 
 
 /********************************************************************************/
 --Booking a service for exsisting client
-
-SELECT SECTORS.AVAILABLE_CAP FROM SECTORS WHERE SECTORS.ANIMAL_TYPE = 'Dog';
 
 SELECT PET.ID, PET.NAME, PET.ANIMAL_TYPE, SECTORS.SECTOR_NO
 FROM PET, OWNER, SECTORS
@@ -35,23 +31,8 @@ WHERE owner.phone_number = '609-703-7777' AND pet.owner_id = owner.id AND sector
  
 INSERT INTO SERVICES VALUES(16, 'Bath', '01-MAY-21', 0);
 INSERT INTO PES VALUES(1, '123456789', 16); 
-INSERT INTO BOOKED VALUES (1, '01-MAY-21', 1, '01-MAY-21',0,0);
+INSERT INTO BOOKED VALUES (1, '01-MAY-21', 1, '01-MAY-21');
 
-
-/********************************************************************************/
---Dropping off your pet
-
-SELECT OWNER.FIRST_NAME, OWNER.LAST_NAME,  PET.NAME, PET.ID, PET.ANIMAL_TYPE
-FROM PET, OWNER
-WHERE owner.phone_number = '609-896-7464' AND pet.owner_id = owner.id;
-
-UPDATE BOOKED
-SET Checked_in = 1
-WHERE BOOKED.PET_ID = 5;
-
-UPDATE SECTORS
-SET Available_cap = Available_cap -1
-WHERE SECTORS.SECTOR_NO = (SELECT SECTORS.SECTOR_NO FROM SECTORS WHERE SECTORS.ANIMAL_TYPE = 'Dog');
 
 /********************************************************************************/
 --Picking up your pet
@@ -65,12 +46,8 @@ SET paid_for = 1
 WHERE SERVICES.service_id = (SELECT pes.serviceid FROM PES WHERE PES.PID = 5);
 
 UPDATE BOOKED
-SET Checked_out = 1, expected_departure_date = '26-APR-21'
+SET expected_departure_date = '26-APR-21'
 WHERE BOOKED.PET_ID = 5;
-
-UPDATE SECTORS
-SET Available_cap = Available_cap + 1
-WHERE SECTORS.SECTOR_NO = (SELECT SECTORS.SECTOR_NO FROM SECTORS WHERE SECTORS.ANIMAL_TYPE = 'Dog');
 
 
 
