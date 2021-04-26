@@ -109,11 +109,11 @@ INSERT INTO EMPLOYEE VALUES('987654321',
 
 /*****   Sectors   **************************************************************/
 
-INSERT INTO SECTORS VALUES(seqSECNO.nextVal, 'Dog Daycare', 25, 901, 'Dog');
-INSERT INTO SECTORS VALUES(seqSECNO.nextVal, 'Cat Loft', 10, 801, 'Cat');
+INSERT INTO SECTORS VALUES(seqSECNO.nextVal, 'Dog Daycare', 30, 901, 'Dog');
+INSERT INTO SECTORS VALUES(seqSECNO.nextVal, 'Cat Loft', 30, 801, 'Cat');
 INSERT INTO SECTORS VALUES(seqSECNO.nextVal, 'Gerbil Tunnels', 30, 767, 'Gerbil');
-INSERT INTO SECTORS VALUES(seqSECNO.nextVal, 'Snake Enclosement', 15, 921, 'Snake');
-INSERT INTO SECTORS VALUES(seqSECNO.nextVal, 'Fly Zone', 8, 675, 'Bird');
+INSERT INTO SECTORS VALUES(seqSECNO.nextVal, 'Snake Enclosement', 30, 921, 'Snake');
+INSERT INTO SECTORS VALUES(seqSECNO.nextVal, 'Fly Zone', 30, 675, 'Bird');
 
 
 /*****   Works_At   *************************************************************/
