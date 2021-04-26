@@ -78,6 +78,17 @@ WHERE '26-apr-21' < booked.expected_departure_date
     AND booked.expected_arrival_date < '26-apr-21'
     AND PET.ANIMAL_TYPE = 'Dog';
 
+--Sum of Dogs in Daycare
+SELECT COUNT(PET.ID)
+FROM PET JOIN BOOKED on PET.ID = BOOKED.PET_ID
+WHERE '26-apr-21' < booked.expected_departure_date
+    AND booked.expected_arrival_date < '26-apr-21'
+    AND PET.ANIMAL_TYPE = 'Dog';
+    
+--Checking Dog Daycare Capacity
+SELECT SECTORS.MAX_CAP
+FROM SECTORS
+WHERE Sector_no = 1;
 
 
 /********************************************************************************/
