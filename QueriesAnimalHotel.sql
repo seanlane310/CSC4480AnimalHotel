@@ -8,7 +8,38 @@
 /*																				*/
 /********************************************************************************/
 
+--Which pets are currently in Dog Daycare?
 
+--Nested Query 
+SELECT PET.ID, PET.NAME, PET.BREED
+FROM PET
+WHERE PET.ANIMAL_TYPE = 'Dog' AND PET.ID IN 
+    (SELECT PET_ID
+    FROM BOOKED
+    WHERE '26-apr-21' <= booked.expected_departure_date
+    AND booked.expected_arrival_date <= '26-apr-21');
+    
+--Join Query 
+SELECT PET.ID, PET.NAME, PET.BREED
+FROM PET JOIN BOOKED on PET.ID = BOOKED.PET_ID
+WHERE '26-apr-21' <= booked.expected_departure_date
+    AND booked.expected_arrival_date <= '26-apr-21'
+    AND PET.ANIMAL_TYPE = 'Dog';
+
+--Sum of Dogs in Daycare
+SELECT COUNT(PET.ID)
+FROM PET JOIN BOOKED on PET.ID = BOOKED.PET_ID
+WHERE '26-apr-21' <= booked.expected_departure_date
+    AND booked.expected_arrival_date <= '26-apr-21'
+    AND PET.ANIMAL_TYPE = 'Dog';
+    
+--Checking Dog Daycare Capacity
+SELECT SECTORS.MAX_CAP
+FROM SECTORS
+WHERE Sector_no = 1;
+
+
+/********************************************************************************/
 --Booking a service for new client
 
 INSERT INTO OWNER VALUES(10, 'Peter', 'Donohue', 'NOVAPREZ@villanova.edu', '609-402-1000');
@@ -57,38 +88,6 @@ WHERE BOOKED.PET_ID = 5;
 INSERT INTO EMPLOYEE VALUES('987650321','John', 'Smith', '11-OCT-1995', '13-MAR-2019', 27, 18);
 INSERT INTO WORKS_AT VALUES('987650321', 3);
 
-
-
-/********************************************************************************/
---Which pets are currently in Dog Daycare?
-
---Nested Query 
-SELECT PET.ID, PET.NAME, PET.BREED
-FROM PET
-WHERE PET.ANIMAL_TYPE = 'Dog' AND PET.ID IN 
-    (SELECT PET_ID
-    FROM BOOKED
-    WHERE '26-apr-21' < booked.expected_departure_date
-    AND booked.expected_arrival_date < '26-apr-21');
-    
---Join Query 
-SELECT PET.ID, PET.NAME, PET.BREED
-FROM PET JOIN BOOKED on PET.ID = BOOKED.PET_ID
-WHERE '26-apr-21' < booked.expected_departure_date
-    AND booked.expected_arrival_date < '26-apr-21'
-    AND PET.ANIMAL_TYPE = 'Dog';
-
---Sum of Dogs in Daycare
-SELECT COUNT(PET.ID)
-FROM PET JOIN BOOKED on PET.ID = BOOKED.PET_ID
-WHERE '26-apr-21' < booked.expected_departure_date
-    AND booked.expected_arrival_date <= '26-apr-21'
-    AND PET.ANIMAL_TYPE = 'Dog';
-    
---Checking Dog Daycare Capacity
-SELECT SECTORS.MAX_CAP
-FROM SECTORS
-WHERE Sector_no = 1;
 
 
 /********************************************************************************/
