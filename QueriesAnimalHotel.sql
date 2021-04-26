@@ -82,7 +82,7 @@ WHERE '26-apr-21' < booked.expected_departure_date
 SELECT COUNT(PET.ID)
 FROM PET JOIN BOOKED on PET.ID = BOOKED.PET_ID
 WHERE '26-apr-21' < booked.expected_departure_date
-    AND booked.expected_arrival_date < '26-apr-21'
+    AND booked.expected_arrival_date <= '26-apr-21'
     AND PET.ANIMAL_TYPE = 'Dog';
     
 --Checking Dog Daycare Capacity
